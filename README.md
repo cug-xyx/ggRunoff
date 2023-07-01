@@ -1,48 +1,78 @@
-# ggRunoff
+ggRunoff
+================
+Yuxuan Xie
+2023/7/1
 
 ## Installation
 
 You can install the development version of `ggRunoff` from [GitHub](https://github.com/) with:
 
-```R
-# install.packages("remotes")
-remotes::install_github("cug-xyx/ggRunoff")
-```
-
 ## Example
 
-### Flood process line
+### Rainfall-runoff process lines
 
-```R
-library(magrittr)
+Firstly, load `ggRunoff` package and `runoff_data`.
+
+``` r
 library(ggRunoff)
-library(ggplot2)
 
-# load runoff data
-data("runoff_data", package = 'ggRunoff')
+data("runoff_data", package = "ggRunoff")
 
-# get runoff data
-dt_runoff <- dplyr::mutate(runoff_data, rof_type = c(rep('flood_1', 400), rep('flood_2', 344))) 
-#' the `yint` must be the `maximum` of the plot data
-ggplot(dt_runoff, aes(time, prcp)) +
-  geom_precipitation(yint=1300, coef=20) +
-  geom_line(aes(y=Q)) +
-  scale_y_precipitation(coef = 20) +
-  facet_wrap(~rof_type, scales = 'free')
-ggsave('inst/figures/20230411-geom_runoff.jpg', dpi = 300, height = 4, width = 9)
+# add a flood type
+runoff_data$flood_type = c(rep('flood_1', 400), rep('flood_2', 344))
 ```
 
-![geom_runoff](inst/figures/20230411-geom_runoff.jpg)
+Check `runoff_data`.
+
+``` r
+tibble::tibble(runoff_data)
+#> # A tibble: 744 x 4
+#>    time                 prcp     Q flood_type
+#>    <dttm>              <dbl> <dbl> <chr>     
+#>  1 2010-05-01 00:00:00     0  73.3 flood_1   
+#>  2 2010-05-01 01:00:00     0  72.8 flood_1   
+#>  3 2010-05-01 02:00:00     0  72.9 flood_1   
+#>  4 2010-05-01 03:00:00     0  73.3 flood_1   
+#>  5 2010-05-01 04:00:00     0  69.8 flood_1   
+#>  6 2010-05-01 05:00:00     0  66.2 flood_1   
+#>  7 2010-05-01 06:00:00     0  66.3 flood_1   
+#>  8 2010-05-01 07:00:00     0  66.3 flood_1   
+#>  9 2010-05-01 08:00:00     0  66.2 flood_1   
+#> 10 2010-05-01 09:00:00     0  66.1 flood_1   
+#> # ... with 734 more rows
+```
+
+Draw rainfall-runoff process lines. Note that the parameter `coef` is a
+factor that **adjusts the scale of rainfall and runoff**. It is used in
+the `geom_rainfallRunoff` function to **adjust the scale of the two on
+the graph**, and in the `scale_y_precipitation` function to **adjust the
+magnitude of the second coordinate axis**.
+
+``` r
+ggplot(runoff_data, aes(x=time, Q)) + theme_test() +
+  geom_rainfallRunoff(
+    aes(runoff=Q, prcp=prcp, color=flood_type), coef=20,
+    rainfall.color='blue', rainfall.fill = 'blue', linewidth=0.5
+  ) +
+  scale_y_precipitation(sec.name = 'Precipitation', coef = 20) +
+  facet_wrap(~flood_type, scales = 'free') +
+  theme(
+    legend.position = c(0, 1),
+    legend.justification = c(0, 1),
+    legend.background = element_blank(),
+    legend.key = element_blank()
+  )
+```
+
+![geom\_rainfallRunoff](inst/figures/20230411-geom_runoff.jpg)
 
 ## TODO
 
-- [ ] `scale_y_precipitation`.
-- [ ] `facet_wrap` or `facet_grid`, i.e., grouping for calculating `yint`
-- [ ] `theme_runoff_prcp`, including `aixs.line.y.right` and other theme settings.
-- [ ] Based the runoff and precipitation, calculate the `yint` automatically. Noted that `yint` must larger than the maximum of runoff (y) data.
+-   [ ] calculate `yint` by group for `facet_wrap` or `facet_grid`
 
-```R
-# times as scaleFactor
-scaleFactor <- max(mtcars$cyl) / max(mtcars$hp)
-```
+-   [ ] automatically calculate `coef`
 
+-   [ ] `theme_runoff_prcp`, including `aixs.line.y.right` and other
+    theme settings.
+
+-   [ ] reconfiguration `facet_subgraphs()`

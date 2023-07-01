@@ -1,11 +1,14 @@
 Package: ggRunoff
 Type: Package
-Title: What the Package Does (Title Case)
+Title: The ggplot extension package for plotting rainfall-runoff process lines
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Yuxuan Xie
+Maintainer: Yuxuan Xie <xieyx@cug.edu.cn>
+Description: A R package for plotting rainfall-runoff process lines using ggplot.
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.2.3
+Imports: 
+    ggplot2,
+    rlang

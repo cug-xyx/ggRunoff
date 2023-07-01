@@ -1,7 +1,7 @@
-GeomPrecipitation <- ggproto(
-  "GeomPrecipitation", GeomTile,
+GeomPrecipitation <- ggplot2::ggproto(
+  "GeomPrecipitation", ggplot2::GeomTile,
 
-  default_aes = aes(
+  default_aes = ggplot2::aes(
     colour = "blue",
     fill = 'blue',
     linewidth = 0.1,
@@ -31,23 +31,18 @@ GeomPrecipitation <- ggproto(
   }
 )
 
-#' Title
+#' Draw precipitation bar on the top of the panel
 #'
-#' @param mapping
-#' @param data
-#' @param stat
-#' @param position
-#' @param ...
-#' @param linejoin
-#' @param na.rm
-#' @param show.legend
-#' @param inherit.aes
+#' @inheritParams ggplot2::geom_tile
+#'
+#' @importFrom ggplot2 layer
+#' @importFrom rlang list2
 #'
 #' @export
 geom_precipitation <- function(mapping = NULL, data = NULL, stat = "identity",
                                position = "identity", ..., linejoin = "mitre",
                                na.rm = FALSE, show.legend = NA, inherit.aes = TRUE) {
-  layer(
+  ggplot2::layer(
     geom = GeomPrecipitation,
     data = data,
     mapping = mapping,

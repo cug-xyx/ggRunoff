@@ -1,7 +1,9 @@
 #' ggplot pipe tools
 #'
-#' @param x
-#' @param y
+#' @param x the left variable
+#' @param y the right variable
+#'
+#' @example R/examples/ex-pipe1.R
 #'
 #' @export
 `%||%` <- function(x, y) {
