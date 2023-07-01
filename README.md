@@ -5,7 +5,13 @@ Yuxuan Xie
 
 ## Installation
 
-You can install the development version of `ggRunoff` from [GitHub](https://github.com/) with:
+You can install the development version of `ggRunoff` from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("cug-xyx/ggRunoff")
+```
 
 ## Example
 
