@@ -70,15 +70,19 @@ ggplot(runoff_data, aes(x=time, Q)) + theme_test() +
   )
 ```
 
-![geom\_rainfallRunoff](inst/figures/20230411-geom_runoff.jpg)
+<figure>
+<img src="inst/figures/20230411-geom_runoff.jpg"
+alt="geom_rainfallRunoff" />
+<figcaption aria-hidden="true">geom_rainfallRunoff</figcaption>
+</figure>
 
 ## TODO
 
--   [ ] calculate `yint` by group for `facet_wrap` or `facet_grid`
+- [ ] calculate `yint` by group for `facet_wrap` or `facet_grid`
 
--   [ ] automatically calculate `coef`
+- [ ] automatically calculate `coef`
 
--   [ ] `theme_runoff_prcp`, including `aixs.line.y.right` and other
-    theme settings.
+- [ ] `theme_runoff_prcp`, including `aixs.line.y.right` and other theme
+  settings.
 
--   [ ] reconfiguration `facet_subgraphs()`
+- [ ] reconfiguration `facet_subgraphs()`
