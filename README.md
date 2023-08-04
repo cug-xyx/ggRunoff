@@ -94,7 +94,7 @@ and **validation** periods at three sites by
 [mnxuao](https://github.com/mnxuao). [Click
 here](inst/scripts/demo-ggRunoff.R) to see the source code.
 
-<a href="https://github.com/cug-xyx/inst/figures/20230804-renmx.jpg"><img src="inst/figures/20230804-renmx.jpg" align="left"/></a>
+<a href="https://github.com/cug-xyx/ggRunoff/inst/figures/20230804-Renmx.jpg"><img src="inst/figures/20230804-Renmx.jpg" align="left"/></a>
 
 ## TODO
 
