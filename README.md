@@ -1,7 +1,26 @@
-ggRunoff
-================
-Yuxuan Xie
-2023/7/1
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# ggRunoff <a href="https://github.com/cug-xyx/ggRunoff"><img src="inst/figures/20230411-geom_runoff.jpg" align="right" height="138" /></a>
+
+<!-- badges: start -->
+
+[![License: GPL
+v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![GitHub last
+commit](https://img.shields.io/github/last-commit/cug-xyx/ggRunoff)
+<!-- badges: end -->
+
+## Overview
+
+`ggRunoff` is an R package that can use the `ggplot2` syntax to help you
+visualise **rainfall-runoff process lines** through the simplest
+functions in R language:
+
+- `geom_rainfallRunoff()` adds rainfall-runoff process line layer
+- `scale_y_precipitation()` adjusts y-axis and second axis
+
+\| 洪水过程线 \| 流量过程线 \|
 
 ## Installation
 
@@ -9,11 +28,11 @@ You can install the development version of `ggRunoff` from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("remotes")
+# install.packages("remotes") or using `devtools`
 remotes::install_github("cug-xyx/ggRunoff")
 ```
 
-## Example
+## Usage
 
 ### Rainfall-runoff process lines
 
@@ -33,19 +52,14 @@ Check `runoff_data`.
 ``` r
 tibble::tibble(runoff_data)
 #> # A tibble: 744 x 4
-#>    time                 prcp     Q flood_type
-#>    <dttm>              <dbl> <dbl> <chr>     
-#>  1 2010-05-01 00:00:00     0  73.3 flood_1   
-#>  2 2010-05-01 01:00:00     0  72.8 flood_1   
-#>  3 2010-05-01 02:00:00     0  72.9 flood_1   
-#>  4 2010-05-01 03:00:00     0  73.3 flood_1   
-#>  5 2010-05-01 04:00:00     0  69.8 flood_1   
-#>  6 2010-05-01 05:00:00     0  66.2 flood_1   
-#>  7 2010-05-01 06:00:00     0  66.3 flood_1   
-#>  8 2010-05-01 07:00:00     0  66.3 flood_1   
-#>  9 2010-05-01 08:00:00     0  66.2 flood_1   
-#> 10 2010-05-01 09:00:00     0  66.1 flood_1   
-#> # ... with 734 more rows
+#>   time                 prcp     Q flood_type
+#>   <dttm>              <dbl> <dbl> <chr>     
+#> 1 2010-05-01 00:00:00     0  73.3 flood_1   
+#> 2 2010-05-01 01:00:00     0  72.8 flood_1   
+#> 3 2010-05-01 02:00:00     0  72.9 flood_1   
+#> 4 2010-05-01 03:00:00     0  73.3 flood_1   
+#> 5 2010-05-01 04:00:00     0  69.8 flood_1   
+#> # ... with 739 more rows
 ```
 
 Draw rainfall-runoff process lines. Note that the parameter `coef` is a
@@ -55,46 +69,37 @@ the graph**, and in the `scale_y_precipitation` function to **adjust the
 magnitude of the second coordinate axis**.
 
 ``` r
-ggplot(runoff_data, aes(x=time, Q)) + theme_test() +
+set_coef = 15
+
+ggplot(runoff_data, aes(x=time, Q)) +
   geom_rainfallRunoff(
-    aes(runoff=Q, prcp=prcp, color=flood_type), coef=15,
-    rainfall.color='#80b1d3', rainfall.fill = '#80b1d3',
-    color = 'darkorange', linewidth=0.5
+    aes(runoff=Q, prcp=prcp, color=flood_type), 
+    coef=set_coef, show.legend = F
   ) +
-  scale_y_precipitation(sec.name = 'Precipitation (mm)', coef = 15) +
-  facet_wrap(~flood_type, scales = 'free') +
-  scale_x_datetime(date_labels = "%m/%d") +
-  theme(
-    legend.position = c(0, 1),
-    legend.justification = c(0, 1),
-    legend.background = element_blank(),
-    legend.key = element_blank(),
-    axis.ticks = element_blank(),
-    axis.text.y.left = element_text(color='darkorange'),
-    axis.text.y.right = element_text(color='#3e89be'),
-    axis.text = element_text(color = 'black'),
-    axis.text.x = element_text(angle = 60, hjust = 1),
-    axis.title.y.left = element_text(color = 'darkorange'),
-    axis.title.y.right =element_text(color = '#3e89be'),
-    strip.background = element_blank(),
-    strip.text = element_text(face = 'bold', hjust = 0)
-  ) +
-  labs(x = 'Date', y = expression('Runoff (m'^'3'*'/s)'))
+  scale_y_precipitation(sec.name = 'Precipitation (mm)', coef = set_coef) +
+  facet_wrap(~flood_type, scales = 'free')
 ```
 
-<figure>
-<img src="inst/figures/20230411-geom_runoff.jpg"
-alt="geom_rainfallRunoff" />
-<figcaption aria-hidden="true">geom_rainfallRunoff</figcaption>
-</figure>
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+
+## More examples produced by `ggRunoff`
+
+Optimising results in [Usage](#Usage). [Click
+here](inst/scripts/demo-ggRunoff.R) to see the source code.
+
+<a href="inst/scripts/demo-ggRunoff.R"><img src="inst/figures/20230411-geom_runoff.jpg" align="left"/></a>
+
+Visualisation of hydrological model performance during **calibration**
+and **validation** periods at three sites by
+[mnxuao](https://github.com/mnxuao). [Click
+here](inst/scripts/demo-ggRunoff.R) to see the source code.
+
+<a href="https://github.com/cug-xyx/inst/figures/20230804-renmx.jpg"><img src="inst/figures/20230804-renmx.jpg" align="left"/></a>
 
 ## TODO
 
-- [ ] calculate `yint` by group for `facet_wrap` or `facet_grid`
-
-- [ ] automatically calculate `coef`
-
-- [ ] `theme_runoff_prcp`, including `aixs.line.y.right` and other theme
-  settings.
-
-- [ ] reconfiguration `facet_subgraphs()`
+- [ ] Add a package logo using `hexSticker` or something.
+- [ ] Add a setting for showing rainfall legend.
+- [ ] Calculate `yint` by group for `facet_wrap` or `facet_grid`.
+- [ ] `theme_rainfallRunoff`, including `aixs.line.y.right` and other
+  theme. settings.
