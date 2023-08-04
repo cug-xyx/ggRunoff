@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggRunoff <a href="https://github.com/cug-xyx/ggRunoff"><img src="inst/figures/20230411-geom_runoff.jpg" align="right" height="138" /></a>
+# ggRunoff <a href="https://github.com/cug-xyx/ggRunoff"><img src="inst/figures/logo.png" align="right" height="138"/></a>
 
 <!-- badges: start -->
 
@@ -9,6 +9,7 @@
 v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ![GitHub last
 commit](https://img.shields.io/github/last-commit/cug-xyx/ggRunoff)
+
 <!-- badges: end -->
 
 ## Overview
@@ -84,7 +85,7 @@ ggplot(runoff_data, aes(x=time, Q)) +
 
 ## More examples produced by `ggRunoff`
 
-Optimising results in [Usage](#Usage). [Click
+Optimising results in [Usage](#usage). [Click
 here](inst/scripts/demo-ggRunoff.R) to see the source code.
 
 <a href="inst/scripts/demo-ggRunoff.R"><img src="inst/figures/20230411-geom_runoff.jpg" align="left"/></a>
@@ -92,7 +93,8 @@ here](inst/scripts/demo-ggRunoff.R) to see the source code.
 Visualisation of hydrological model performance during **calibration**
 and **validation** periods at three sites by
 [mnxuao](https://github.com/mnxuao). [Click
-here](inst/scripts/demo-ggRunoff.R) to see the source code.
+here](inst/scripts/demo02-site3_model_visual.R.R) to see the source
+code.
 
 <a href="https://github.com/cug-xyx/ggRunoff/inst/figures/20230804-Renmx.jpg"><img src="inst/figures/20230804-Renmx.jpg" align="left"/></a>
 
