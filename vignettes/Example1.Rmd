@@ -19,10 +19,8 @@ library(ggRunoff)
 
 set_coef = 15
 
-runoff_data |>
-  dplyr::mutate(
-    flood_type = c(rep('Flood_1', 400), rep('Flood_2', 344)) # nolint
-  ) |>
+runoff_data$flood_type = c(rep('Flood_1', 400), rep('Flood_2', 344))
+runoff_data |> 
   ggplot(aes(x=time, Q)) + theme_test() +
   geom_rainfallRunoff(
     aes(runoff=Q, prcp=prcp, color=flood_type), coef=set_coef,
