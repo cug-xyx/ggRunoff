@@ -7,12 +7,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="A R package for plotting rainfall-runoff process lines using ggplot.">
 <title>The ggplot extension package for plotting rainfall-runoff process lines • ggRunoff</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="The ggplot extension package for plotting rainfall-runoff process lines">
 <meta property="og:description" content="A R package for plotting rainfall-runoff process lines using ggplot.">
+<meta property="og:image" content="https://cug-xyx.github.io/ggRunoff/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -51,9 +58,11 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="ggrunoff-">ggRunoff <a href="https://github.com/cug-xyx/ggRunoff" class="external-link"><img src="inst/figures/logo.png" align="right" height="138"></a>
+<div class="page-header">
+<img src="logo.png" class="logo" alt=""><h1 id="ggrunoff-">ggRunoff 
 <a class="anchor" aria-label="anchor" href="#ggrunoff-"></a>
-</h1></div>
+</h1>
+</div>
 <!-- badges: start -->
 
 <!-- badges: end -->
@@ -122,16 +131,16 @@
 <a class="anchor" aria-label="anchor" href="#more-examples-produced-by-ggrunoff"></a>
 </h2>
 <p>Optimising results in <a href="#usage">Usage</a>. <a href="inst/scripts/demo-ggRunoff.R">Click here</a> to see the source code.</p>
-<p><a href="inst/scripts/demo-ggRunoff.R"><img src="inst/figures/20230411-geom_runoff.jpg" align="left"></a></p>
+<p><a href="inst/scripts/demo-ggRunoff.R"><img src="reference/figures/20230411-geom_runoff.jpg" align="left"></a></p>
 <p>Visualisation of hydrological model performance during <strong>calibration</strong> and <strong>validation</strong> periods at three sites by <a href="https://github.com/mnxuao" class="external-link">mnxuao</a>. <a href="inst/scripts/demo02-site3_model_visual.R.R">Click here</a> to see the source code.</p>
-<p><a href="https://github.com/cug-xyx/ggRunoff/inst/figures/20230804-Renmx.jpg" class="external-link"><img src="inst/figures/20230804-Renmx.jpg" align="left"></a></p>
+<p><a href="https://github.com/cug-xyx/ggRunoff/inst/figures/20230804-Renmx.jpg" class="external-link"><img src="reference/figures/20230804-Renmx.jpg" align="left"></a></p>
 </div>
 <div class="section level2">
 <h2 id="todo">TODO<a class="anchor" aria-label="anchor" href="#todo"></a>
 </h2>
 <ul class="task-list">
 <li>
-<input type="checkbox" disabled>Add a package logo using <code>hexSticker</code> or something.</li>
+<input type="checkbox" disabled checked>Add a package logo using <code>hexSticker</code> or something.</li>
 <li>
 <input type="checkbox" disabled>Add a setting for showing rainfall legend.</li>
 <li>
