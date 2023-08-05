@@ -25,7 +25,7 @@ GeomRainfallRunoff <- ggplot2::ggproto(
     data$width <- data$width %||% params$width %||% resolution(data$x, FALSE)
     data$yint <- params$yint %||% pmax(prcp_max, runoff_max, na.rm=T)
     # 保证降雨在径流的1/3位置
-    #' `不知道如何传递给 scale_y_prcp 函数中`
+    # `不知道如何传递给 scale_y_prcp 函数中`
     # data$coef <- params$coef %||% (runoff_max * 1/3 / prcp_max) %||% 1
     data$coef <- params$coef %||%  1
 
@@ -59,12 +59,12 @@ GeomRainfallRunoff <- ggplot2::ggproto(
     )
   }
 
-  #' `直接改变 data，或许可以避免使用coef`
+  # `直接改变 data，或许可以避免使用coef`
   # compute_group = function(data, scales, fun_slope = slope_mk) {
   #   cal_slope(data, fun_slope)
   # }
 
-  #' `draw_panel 和 draw_group 的区别`
+  # `draw_panel 和 draw_group 的区别`
   # draw_group = function(self, data, panel_params, coord,
   #                       fun_slope = slope_mk, na.rm = FALSE) {
   #   df <- cal_slope(data, fun_slope)

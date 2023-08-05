@@ -13,13 +13,22 @@ knitr::opts_chunk$set(
 options(tibble.print_min = 5, tibble.print_max = 5)
 ```
 
-```{r, fig.height=2.5}
+## Load R package and data
+
+```{r}
 library(ggplot2)
 library(ggRunoff)
 
+runoff_data$flood_type = c(rep('Flood_1', 400), rep('Flood_2', 344))
+
+head(runoff_data)
+```
+
+## Visualization
+
+```{r, fig.height=2.5}
 set_coef = 15
 
-runoff_data$flood_type = c(rep('Flood_1', 400), rep('Flood_2', 344))
 runoff_data |> 
   ggplot(aes(x=time, Q)) + theme_test() +
   geom_rainfallRunoff(

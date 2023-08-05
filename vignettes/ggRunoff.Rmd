@@ -17,15 +17,22 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 
 Let's get start with `ggRunoff`.
 
-```{r, eval=TRUE, fig.height=3}
+## Load R package and data
+
+```{r, eval=TRUE}
 library(ggplot2)
 library(ggRunoff)
 
 data("runoff_data", package = "ggRunoff")
-
 # add a flood type
 runoff_data$flood_type = c(rep('flood_1', 400), rep('flood_2', 344))
 
+head(runoff_data)
+```
+
+## Visualization
+
+```{r, fig.height=3}
 set_coef = 15
 
 ggplot(runoff_data, aes(x=time, Q)) +

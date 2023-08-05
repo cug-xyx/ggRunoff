@@ -19,6 +19,8 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 library(ggplot2)
 library(cowplot)
 library(ggRunoff)
+
+head(st3_data)
 ```
 
 ## plot function
