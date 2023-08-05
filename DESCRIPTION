@@ -15,6 +15,7 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
 Imports: 
+    cowplot,
     ggplot2,
     rlang
 URL: https://cug-xyx.github.io/ggRunoff/

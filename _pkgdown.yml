@@ -14,9 +14,10 @@ navbar:
     href: index.html
   - text: Get Started
     href: articles/ggRunoff.html
-  - text: Guides
   - text: Examples
     menu:
     - text: Example 1
       href: articles/Example1.html
+    - text: Example 2
+      href: articles/Example2.html
 
