@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggRunoff <a href="https://github.com/cug-xyx/ggRunoff"><img src="inst/figures/logo.png" align="right" height="138"/></a>
+# ggRunoff <a href="https://cug-xyx.github.io/ggRunoff/index.html"><img src="man/figures/logo.png" align="right" height="138"/></a>
 
 <!-- badges: start -->
 
@@ -88,7 +88,7 @@ ggplot(runoff_data, aes(x=time, Q)) +
 Optimising results in [Usage](#usage). [Click
 here](inst/scripts/demo-ggRunoff.R) to see the source code.
 
-<a href="inst/scripts/demo-ggRunoff.R"><img src="inst/figures/20230411-geom_runoff.jpg" align="left"/></a>
+<a href="inst/scripts/demo-ggRunoff.R"><img src="man/figures/20230411-geom_runoff.jpg" align="left"/></a>
 
 Visualisation of hydrological model performance during **calibration**
 and **validation** periods at three sites by
@@ -96,11 +96,11 @@ and **validation** periods at three sites by
 here](inst/scripts/demo02-site3_model_visual.R.R) to see the source
 code.
 
-<a href="https://github.com/cug-xyx/ggRunoff/inst/figures/20230804-Renmx.jpg"><img src="inst/figures/20230804-Renmx.jpg" align="left"/></a>
+<a href="https://github.com/cug-xyx/ggRunoff/inst/figures/20230804-Renmx.jpg"><img src="man/figures/20230804-Renmx.jpg" align="left"/></a>
 
 ## TODO
 
-- [ ] Add a package logo using `hexSticker` or something.
+- [x] Add a package logo using `hexSticker` or something.
 - [ ] Add a setting for showing rainfall legend.
 - [ ] Calculate `yint` by group for `facet_wrap` or `facet_grid`.
 - [ ] `theme_rainfallRunoff`, including `aixs.line.y.right` and other
