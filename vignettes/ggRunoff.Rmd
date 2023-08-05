@@ -1,0 +1,38 @@
+---
+title: "Introduction to ggRunoff"
+author: "Yuxuan Xie"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+options(tibble.print_min = 5, tibble.print_max = 5)
+```
+
+Let's get start with `ggRunoff`.
+
+```{r, eval=TRUE, fig.height=3}
+library(ggplot2)
+library(ggRunoff)
+
+data("runoff_data", package = "ggRunoff")
+
+# add a flood type
+runoff_data$flood_type = c(rep('flood_1', 400), rep('flood_2', 344))
+
+set_coef = 15
+
+ggplot(runoff_data, aes(x=time, Q)) +
+  geom_rainfallRunoff(
+    aes(runoff=Q, prcp=prcp, color=flood_type), 
+    coef=set_coef, show.legend = F
+  ) +
+  scale_y_precipitation(sec.name = 'Precipitation (mm)', coef = set_coef) +
+  facet_wrap(~flood_type, scales = 'free')
+```
