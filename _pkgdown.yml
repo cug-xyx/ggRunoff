@@ -1,4 +1,10 @@
 url: https://cug-xyx.github.io/ggRunoff/
 template:
   bootstrap: 5
+articales:
+- title: All vignettes
+  contents:
+  - all
+  - vignettes
+- title: hello world
 
