@@ -14,22 +14,22 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 ```
 
 ```{r, fig.height=2.5}
-library(data.table)
 library(ggplot2)
-library(magrittr)
 library(ggRunoff)
 
-runoff_data %>%
+set_coef = 15
+
+runoff_data |>
   dplyr::mutate(
     flood_type = c(rep('Flood_1', 400), rep('Flood_2', 344)) # nolint
-  ) %>%
+  ) |>
   ggplot(aes(x=time, Q)) + theme_test() +
   geom_rainfallRunoff(
-    aes(runoff=Q, prcp=prcp, color=flood_type), coef=15,
+    aes(runoff=Q, prcp=prcp, color=flood_type), coef=set_coef,
     rainfall.color='#80b1d3', rainfall.fill = '#80b1d3',
     color = 'darkorange', linewidth=0.5
   ) +
-  scale_y_precipitation(sec.name = 'Precipitation (mm)', coef = 15) +
+  scale_y_precipitation(sec.name = 'Precipitation (mm)', coef = set_coef) +
   facet_wrap(~flood_type, scales = 'free') +
   scale_x_datetime(date_labels = "%m/%d") +
   theme(
