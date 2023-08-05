@@ -58,6 +58,9 @@
     <a class="dropdown-item" href="../articles/Example2.html">Example 2</a>
   </div>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../reference/index.html">Reference</a>
+</li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
@@ -92,7 +95,16 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://wilkelab.org/cowplot/" class="external-link">cowplot</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://cug-xyx.github.io/ggRunoff/">ggRunoff</a></span><span class="op">)</span></span></code></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://cug-xyx.github.io/ggRunoff/">ggRunoff</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">st3_data</span><span class="op">)</span></span>
+<span><span class="co">#&gt;         date  model_type   site       prcp type         R          facet_lab</span></span>
+<span><span class="co">#&gt; 1 1961-01-01 calibration site_1   5.953619  Sim  3.802848 site_1 calibration</span></span>
+<span><span class="co">#&gt; 2 1961-02-01 calibration site_1  13.204558  Sim  6.041618 site_1 calibration</span></span>
+<span><span class="co">#&gt; 3 1961-03-01 calibration site_1  32.755765  Sim 14.026134 site_1 calibration</span></span>
+<span><span class="co">#&gt; 4 1961-04-01 calibration site_1  51.831636  Sim 22.026324 site_1 calibration</span></span>
+<span><span class="co">#&gt; 5 1961-05-01 calibration site_1  78.729760  Sim 33.627359 site_1 calibration</span></span>
+<span><span class="co">#&gt; 6 1961-06-01 calibration site_1 118.839412  Sim 52.658724 site_1 calibration</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="plot-function">plot function<a class="anchor" aria-label="anchor" href="#plot-function"></a>
