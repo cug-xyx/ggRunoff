@@ -1,10 +1,15 @@
 Package: ggRunoff
 Type: Package
-Title: The ggplot extension package for plotting rainfall-runoff process lines
+Title: ggRunoff: Visualisation of rainfall-runoff process lines using ggplot2 syntax
 Version: 0.1.0
-Author: Yuxuan Xie
-Maintainer: Yuxuan Xie <xieyx@cug.edu.cn>
-Description: A R package for plotting rainfall-runoff process lines using ggplot.
+Authors@R: 
+    person(given = "Yuxuan",
+           family = "Xie",
+           role = c("aut", "cre"),
+           email = "xieyx@cug.edu.cn",
+           comment = c(ORCID = "0009-0006-8087-6337"))
+Description: ggRunoff is an R package that can use the ggplot2 syntax to help you 
+  visualise rainfall-runoff process lines through the simplest functions in R language.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true

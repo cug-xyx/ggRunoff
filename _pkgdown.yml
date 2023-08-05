@@ -1,4 +1,22 @@
 url: https://cug-xyx.github.io/ggRunoff/
+title: ggRunoff
+home:
+  links:
+  - text: Ask a question
+    href: https://github.com/cug-xyx/ggRunoff/issues
 template:
   bootstrap: 5
+navbar:
+  title: a title
+  type: default
+  left:
+  - icon: fa-home fa-lg
+    href: index.html
+  - text: Get Started
+    href: articles/ggRunoff.html
+  - text: Guides
+  - text: Examples
+    menu:
+    - text: Example 1
+      href: articles/Example1.html
 

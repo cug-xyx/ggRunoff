@@ -2,15 +2,15 @@
 title: "Introduction to ggRunoff"
 author: "Yuxuan Xie"
 date: "`r Sys.Date()`"
+resource_files:
+  - data/runoff_data.rda
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+  comment = "#>"
 )
 options(tibble.print_min = 5, tibble.print_max = 5)
 ```
