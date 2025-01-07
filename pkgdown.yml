@@ -1,12 +1,11 @@
-pandoc: 2.19.2
-pkgdown: 2.0.7
+pandoc: 3.1.11
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   Example1: Example1.html
   Example2: Example2.html
   ggRunoff: ggRunoff.html
-last_built: 2023-08-05T08:13Z
+last_built: 2025-01-07T14:56Z
 urls:
   reference: https://cug-xyx.github.io/ggRunoff/reference
   article: https://cug-xyx.github.io/ggRunoff/articles
-
