@@ -28,7 +28,7 @@ head(st3_data)
 ```{r}
 make_plot <- function(
     dt, m_type = 'calibration',
-    x_title = NULL, y_fst_title = 'R', y_sec_title = 'Precipitation (mm)',
+    x_title = NULL, y_fst_title = expression('Streamflow (m'^'3'*'/s)'), y_sec_title = 'Precipitation (mm)',
     coef = 0.3, yint = 150, rainfall.width = 10,
     hide_fst_y = FALSE, hide_sec_y = FALSE,
     hide_legend = TRUE

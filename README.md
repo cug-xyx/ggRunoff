@@ -18,8 +18,8 @@ commit](https://img.shields.io/github/last-commit/cug-xyx/ggRunoff)
 visualise **rainfall-runoff process lines** through the simplest
 functions in R language:
 
-- `geom_rainfallRunoff()` adds rainfall-runoff process line layer
-- `scale_y_precipitation()` adjusts y-axis and second axis
+-   `geom_rainfallRunoff()` adds rainfall-runoff process line layer
+-   `scale_y_precipitation()` adjusts y-axis and second axis
 
 \| 洪水过程线 \| 流量过程线 \|
 
@@ -60,7 +60,7 @@ tibble::tibble(runoff_data)
 #> 3 2010-05-01 02:00:00     0  72.9 flood_1   
 #> 4 2010-05-01 03:00:00     0  73.3 flood_1   
 #> 5 2010-05-01 04:00:00     0  69.8 flood_1   
-#> # ... with 739 more rows
+#> # i 739 more rows
 ```
 
 Draw rainfall-runoff process lines. Note that the parameter `coef` is a
@@ -93,15 +93,22 @@ here](inst/scripts/demo-ggRunoff.R) to see the source code.
 Visualisation of hydrological model performance during **calibration**
 and **validation** periods at three sites by
 [mnxuao](https://github.com/mnxuao). [Click
-here](inst/scripts/demo02-site3_model_visual.R.R) to see the source
-code.
+here](inst/scripts/demo02-site3_model_visual.R) to see the source code.
 
-<a href="https://github.com/cug-xyx/ggRunoff/inst/figures/20230804-Renmx.jpg"><img src="man/figures/20230804-Renmx.jpg" align="left"/></a>
+<a href="inst/scripts/demo02-site3_model_visual.R"><img src="man/figures/20230804-Renmx.jpg" align="left"/></a>
 
 ## TODO
 
-- [x] Add a package logo using `hexSticker` or something.
-- [ ] Add a setting for showing rainfall legend.
-- [ ] Calculate `yint` by group for `facet_wrap` or `facet_grid`.
-- [ ] `theme_rainfallRunoff`, including `aixs.line.y.right` and other
-  theme. settings.
+-   [x] Add a package logo using `hexSticker` or something.
+-   [ ] Update exist funcitions in `ggRunoff` to make it more
+    convenient.
+-   [ ] Make `README.md` more clear.
+-   [ ] Add a setting for showing rainfall legend.
+-   [ ] Calculate `yint` by group for `facet_wrap` or `facet_grid`.
+-   [ ] `theme_rainfallRunoff`, including `aixs.line.y.right` and other
+    theme. settings.
+
+## References
+
+-   [pkgdown](https://pkgdown.r-lib.org/articles/pkgdown.html)
+    (<https://pkgdown.r-lib.org/articles/pkgdown.html>)

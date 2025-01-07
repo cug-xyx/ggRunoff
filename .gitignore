@@ -3,7 +3,12 @@
 .RData
 .Rbuildignore
 
+.vscode
+
+Notes.md
 README.Rmd
+README.html
+
 docs
 
 scripts/*

@@ -54,5 +54,5 @@ runoff_data |>
     strip.background = element_blank(),
     strip.text = element_text(face = 'bold', hjust = 0)
   ) +
-  labs(x = 'Date', y = expression('Runoff (m'^'3'*'/s)'))
+  labs(x = 'Date', y = expression('Streamflow (m'^'3'*'/s)'))
 ```
