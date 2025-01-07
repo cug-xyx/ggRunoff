@@ -114,7 +114,7 @@
 <span><span class="co">#&gt; 3 2010-05-01 02:00:00     0  72.9 flood_1   </span></span>
 <span><span class="co">#&gt; 4 2010-05-01 03:00:00     0  73.3 flood_1   </span></span>
 <span><span class="co">#&gt; 5 2010-05-01 04:00:00     0  69.8 flood_1   </span></span>
-<span><span class="co">#&gt; # ... with 739 more rows</span></span></code></pre></div>
+<span><span class="co">#&gt; # i 739 more rows</span></span></code></pre></div>
 <p>Draw rainfall-runoff process lines. Note that the parameter <code>coef</code> is a factor that <strong>adjusts the scale of rainfall and runoff</strong>. It is used in the <code>geom_rainfallRunoff</code> function to <strong>adjust the scale of the two on the graph</strong>, and in the <code>scale_y_precipitation</code> function to <strong>adjust the magnitude of the second coordinate axis</strong>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">set_coef</span> <span class="op">=</span> <span class="fl">15</span></span>
@@ -135,17 +135,27 @@
 </h2>
 <p>Optimising results in <a href="#usage">Usage</a>. <a href="inst/scripts/demo-ggRunoff.R">Click here</a> to see the source code.</p>
 <p><a href="inst/scripts/demo-ggRunoff.R"><img src="reference/figures/20230411-geom_runoff.jpg" align="left"></a></p>
-<p>Visualisation of hydrological model performance during <strong>calibration</strong> and <strong>validation</strong> periods at three sites by <a href="https://github.com/mnxuao" class="external-link">mnxuao</a>. <a href="inst/scripts/demo02-site3_model_visual.R.R">Click here</a> to see the source code.</p>
-<p><a href="https://github.com/cug-xyx/ggRunoff/inst/figures/20230804-Renmx.jpg" class="external-link"><img src="reference/figures/20230804-Renmx.jpg" align="left"></a></p>
+<p>Visualisation of hydrological model performance during <strong>calibration</strong> and <strong>validation</strong> periods at three sites by <a href="https://github.com/mnxuao" class="external-link">mnxuao</a>. <a href="inst/scripts/demo02-site3_model_visual.R">Click here</a> to see the source code.</p>
+<p><a href="inst/scripts/demo02-site3_model_visual.R"><img src="reference/figures/20230804-Renmx.jpg" align="left"></a></p>
 </div>
 <div class="section level2">
 <h2 id="todo">TODO<a class="anchor" aria-label="anchor" href="#todo"></a>
 </h2>
 <ul class="task-list">
 <li><label><input type="checkbox" checked>Add a package logo using <code>hexSticker</code> or something.</label></li>
+<li><label><input type="checkbox">Update exist funcitions in <code>ggRunoff</code> to make it more convenient.</label></li>
+<li><label><input type="checkbox">Make <code>README.md</code> more clear.</label></li>
 <li><label><input type="checkbox">Add a setting for showing rainfall legend.</label></li>
 <li><label><input type="checkbox">Calculate <code>yint</code> by group for <code>facet_wrap</code> or <code>facet_grid</code>.</label></li>
 <li><label><input type="checkbox"><code>theme_rainfallRunoff</code>, including <code>aixs.line.y.right</code> and other theme. settings.</label></li>
+</ul>
+</div>
+<div class="section level2">
+<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+</h2>
+<ul>
+<li>
+<a href="https://pkgdown.r-lib.org/articles/pkgdown.html" class="external-link">pkgdown</a> (<a href="https://pkgdown.r-lib.org/articles/pkgdown.html" class="external-link uri">https://pkgdown.r-lib.org/articles/pkgdown.html</a>)</li>
 </ul>
 </div>
 </div>
